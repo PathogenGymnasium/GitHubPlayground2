@@ -1,0 +1,151 @@
+name: (WIP, Proposed) Dear ImGui Bug Report
+description: Select this option if you are experiencing a crash, a Failed assert, or incorrect behavior.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please ensure you have read the [FAQ](https://github.com/ocornut/imgui/blob/master/docs/FAQ.md) as well as the [issue submission guidelines](https://github.com/ocornut/imgui/issues/2261).**
+
+        In particular, if your issue involves widgets not reacting or widgets reacting strangely, [please read the entire ID stack section](https://github.com/ocornut/imgui/blob/master/docs/FAQ.md#q-why-is-my-widget-not-reacting-when-i-click-on-it).
+
+        Be mindful that your submission will be sent to the e-mail inbox of users watching this repository. Try to proof-read your messages before sending them. Edits are not seen by those users.
+
+        Thank you!
+  #################################################################################################################################################################################
+  # Version / Branch
+  #################################################################################################################################################################################
+  - type: markdown
+    attributes:
+      value: |
+        # Dear ImGui Version / Branch
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "EG: 1.23 or a specific Git commit"
+    validations:
+      required: true
+  - type: dropdown
+    id: branch
+    attributes:
+      label: Branch
+      options:
+        - master
+        - docking
+        - features/string_view
+        - features/disabled
+        - features/shadows
+        - other
+    validations:
+      required: true
+  #################################################################################################################################################################################
+  # Platform Info
+  #################################################################################################################################################################################
+  - type: markdown
+    attributes:
+      value: "# Platform Information"
+  - type: dropdown
+    id: platform-backend
+    attributes:
+      label: Platform Backend
+      description: |
+        Specify if using an official backend, otherwise select "Custom"
+
+        If you're using an official backend with substantial modifications, make sure to mention that below.
+      options:
+        #TODO: Should we order these so common backends are first? (It feels weird to have allegro listed first when it's kinda dead.)
+        - imgui_impl_allegro5
+        - imgui_impl_android
+        - imgui_impl_glfw
+        - imgui_impl_glut
+        - imgui_impl_marmalade
+        - imgui_impl_osx
+        - imgui_impl_sdl
+        - imgui_impl_win32
+        - Custom
+    validations:
+      required: true
+  - type: dropdown
+    id: renderer-backend
+    attributes:
+      label: Renderer Backend
+      description: Specify if using an official backend, otherwise select "Custom"
+      options:
+        - imgui_impl_allegro5
+        - imgui_impl_dx9
+        - imgui_impl_dx10
+        - imgui_impl_dx11
+        - imgui_impl_dx12
+        - imgui_impl_marmalade
+        - imgui_impl_metal
+        - imgui_impl_opengl2
+        - imgui_impl_opengl3
+        - imgui_impl_vulkan
+        - imgui_impl_wgpu
+        - Custom
+    validations:
+      required: true
+  - type: input
+    id: compiler
+    attributes:
+      label: Compiler
+      description: If the question is related to building or platform specific features
+      placeholder: "EG: MSVC, GCC, Clang"
+    validations:
+      required: false
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System
+      #TODO: Add versions to the other examples? I didn't include them to avoid making it super long with the hope that including it on Windows will prompt people to include it.
+      placeholder: "EG: Windows 10, Arch Linux, macOS, Android"
+    validations:
+      required: true
+  #################################################################################################################################################################################
+  # Main Issue Body
+  #################################################################################################################################################################################
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        Please be detailed and provide code snippets, screenshots, or videos if relevant.
+        
+        If you can reproduce the bug in the official demo app, please provide instructions using it.
+      placeholder: |
+        You can drag files here to attach screenshors or videos.
+
+        1. Launch `example_glfw_opengl3`
+        2. Go to Widgets -> Basic and click the Button
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Given the steps above, what did you expect to happen?
+      placeholder: |
+        When I click the button it tanks me for clicking it.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: ...and what actually happened?
+      placeholder: |
+        When I click the button it insults me.
+    validations:
+      required: true
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Other Details
+      description: (Optional) Anything else we should know?
+      placeholder: |
+        This happens on 1.82 as well.
+
+        Thanks for making Dear ImGui 💜
+    validations:
+      required: false
