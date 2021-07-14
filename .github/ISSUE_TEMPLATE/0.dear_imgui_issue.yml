@@ -1,0 +1,130 @@
+name: Dear ImGui Issue
+description: This template is transcribed almost directly from the current template
+body:
+  - type: markdown
+    attributes:
+      value: |
+        1. PLEASE CAREFULLY READ: [FAQ](https://github.com/ocornut/imgui/blob/master/docs/FAQ.md)
+        2. PLEASE CAREFULLY READ: [Issue Submitting Guidelines](https://github.com/ocornut/imgui/issues/2261)
+        3. ~~FOR FIRST-TIME USERS ISSUES COMPILING/LINKING/RUNNING/LOADING FONTS,  please use [GitHub Discussions](https://github.com/ocornut/imgui/discussions).~~ (TODO: Where to link this?)
+        4. PLEASE MAKE SURE that you have: read the FAQ; explored the contents of `ShowDemoWindow()` including the Examples menu; searched among Issues; used your IDE to search for keywords in all sources and text files; and read the link provided in (1) (2).
+        5. Be mindful that messages are being sent to the e-mail box of "Watching" users. Try to proof-read your messages before sending them. Edits are not seen by those users.
+
+        Thank you!
+  #################################################################################################################################################################################
+  # Version / Branch
+  #################################################################################################################################################################################
+  - type: markdown
+    #TODO: The statement below doesn't mesh with the issue template super well.
+    attributes:
+      value: |
+        # Dear ImGui Version / Branch
+
+        _(you may also go to Demo>About Window, and click "Config/Build Information" to obtain a bunch of detailed information that you can paste here)_
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "EG: 1.23 or a specific Git commit"
+    validations:
+      required: true
+  - type: dropdown
+    id: branch
+    attributes:
+      label: Branch
+      options:
+        - master
+        - docking
+        - features/string_view
+        - features/disabled
+        - features/shadows
+        - other
+    validations:
+      required: true
+  #################################################################################################################################################################################
+  # Platform Info
+  #################################################################################################################################################################################
+  - type: markdown
+    attributes:
+      value: "# Platform Information"
+  - type: dropdown
+    id: platform-backend
+    attributes:
+      label: Platform Backend
+      description: Specify if using an official backend, otherwise select "Custom"
+      options:
+        #TODO: Should we order these so common backends are first? (It feels weird to have allegro listed first when it's kinda dead.)
+        - imgui_impl_allegro5
+        - imgui_impl_android
+        - imgui_impl_glfw
+        - imgui_impl_glut
+        - imgui_impl_marmalade
+        - imgui_impl_osx
+        - imgui_impl_sdl
+        - imgui_impl_win32
+        - Custom
+    validations:
+      required: true
+  - type: dropdown
+    id: renderer-backend
+    attributes:
+      label: Renderer Backend
+      description: Specify if using an official backend, otherwise select "Custom"
+      options:
+        - imgui_impl_allegro5
+        - imgui_impl_dx9
+        - imgui_impl_dx10
+        - imgui_impl_dx11
+        - imgui_impl_dx12
+        - imgui_impl_marmalade
+        - imgui_impl_metal
+        - imgui_impl_opengl2
+        - imgui_impl_opengl3
+        - imgui_impl_vulkan
+        - imgui_impl_wgpu
+        - Custom
+    validations:
+      required: true
+  - type: input
+    id: compiler
+    attributes:
+      label: Compiler
+      description: If the question is related to building or platform specific features
+      placeholder: "EG: MSVC, GCC, Clang"
+    validations:
+      required: false
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System
+      #TODO: Add versions to the other examples? I didn't include them to avoid making it super long with the hope that including it on Windows will prompt people to include it.
+      placeholder: "EG: Windows 10, Arch Linux, macOS, Android"
+    validations:
+      required: true
+  #################################################################################################################################################################################
+  # Main Issue Body
+  #################################################################################################################################################################################
+  - type: textarea
+    id: issue-body
+    attributes:
+      label: Your Issue/Question
+      description: Please provide as much context as possible
+    validations:
+      required: true
+  - type: textarea
+    id: issue-media
+    attributes:
+      label: Screenshots/Video
+      placeholder: You can drag files here
+  - type: textarea
+    id: repro
+    attributes:
+      label: Standalone, minimal, complete, and verifiable example
+      description: See https://github.com/ocornut/imgui/issues/2261
+      placeholder: |
+        ```cpp
+        // Here's some code anyone can copy and paste to reproduce your issue
+        ImGui::Begin("Example Bug");
+        MoreCodeToExplainMyIssue();
+        ImGui::End();
+        ```
