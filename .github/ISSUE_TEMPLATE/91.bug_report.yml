@@ -1,19 +1,19 @@
-name: Example Bug Report
-description: Create a bug report for the examples
-labels: 'type: example,template: bug'
+name: (Next.js Example) Bug Report
+description: Create a bug report for the Next.js core
+labels: 'template: bug'
 body:
   - type: markdown
     attributes:
-      value: Thanks for taking the time to file a examples bug report! Please fill out this form as completely as possible.
+      value: Thanks for taking the time to file a bug report! Please fill out this form as completely as possible.
   - type: markdown
     attributes:
       value: If you leave out sections there is a high likelihood it will be moved to the GitHub Discussions "Help" section.
-  - type: input
+  - type: markdown
     attributes:
-      label: What example does this report relate to?
-      description: 'For example: with-styled-components'
-    validations:
-      required: true
+      value: 'Please first verify if your issue exists in the Next.js canary release line: `npm install next@canary`.'
+  - type: markdown
+    attributes:
+      value: 'next@canary is the beta version of Next.js. It includes all features and fixes that are pending to land on the stable release line.'
   - type: input
     attributes:
       label: What version of Next.js are you using?
@@ -70,4 +70,4 @@ body:
       value: Contributors should be able to follow the steps provided in order to reproduce the bug.
   - type: markdown
     attributes:
-      value: Thanks in advance!
+      value: These steps are used to add integration tests to ensure the same issue does not happen again. Thanks in advance!

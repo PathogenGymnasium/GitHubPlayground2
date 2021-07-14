@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Ask a question
-    url: https://github.com/vercel/next.js/discussions
-    about: Ask questions and discuss with other community members
+  - name: Ask a question about Visual Studio or compilers
+    url: https://stackoverflow.com/
+    about: (Not seriously suggesting this, just wanted to show external links are an option.)
