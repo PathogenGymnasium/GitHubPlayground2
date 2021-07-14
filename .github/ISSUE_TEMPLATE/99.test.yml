@@ -1,0 +1,40 @@
+name: Issue Template Test Issue
+description: Test template, please ignore
+body:
+  - type: markdown
+    attributes:
+      value: |
+        1. This
+        2. is
+        3. muliple
+        4. lines!
+
+        Neat!
+  - type: markdown
+    attributes:
+      value: |
+        # This is a header in markdown
+        
+        Pretty cool
+
+        ```cpp
+        printf("Hello, world!");
+        ```
+  - type: input
+    # For some reason id has to be out here and the other attributes have to be nested. (Despite the documentation implying id is an attribute.)
+    id: version
+    attributes:
+      label: Version
+      description: "What version?"
+      placeholder: "EG: 1.84 or a specific sha1"
+  - type: dropdown
+    id: branch
+    attributes:
+      label: "​" # Can't be empty or even just a space :/ Zero-width space works though! (Although it creates an awkward gap.)
+      description: "What branch? [Can markdown go here?](https://github.com/)"
+      options:
+        - master
+        - docking
+        - string_view
+        - shadows
+        - other
